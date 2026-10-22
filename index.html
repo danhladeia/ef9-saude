@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saúde e qualidade de vida — Educação Física, 9º ano</title>
+<meta name="description" content="Trilha interativa de Educação Física do 9º ano sobre saúde, qualidade de vida e atividade física (EF89EF08P9), com progresso salvo no próprio navegador.">
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa">
+    <img src="img/logo.png" alt="">
+    <h1>Saúde e qualidade de vida<small>Educação Física · 9º ano · EF89EF08P9</small></h1>
+    <span class="quem" id="quem">—</span>
+    <nav aria-label="seções">
+      <button id="nav-inicio" class="ativo">Trilha</button>
+      <button id="nav-progresso">Meu progresso</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div id="sem-storage" class="alerta" hidden>
+    Este navegador está bloqueando o armazenamento local (pode ser uma janela anônima).
+    Você consegue estudar, mas <b>o progresso não será salvo</b>.
+  </div>
+
+  <!-- porta de entrada -->
+  <section class="porta" id="porta">
+    <img src="img/mascote.png" alt="">
+    <h2>Vamos começar?</h2>
+    <p>Escreva seu nome para o sistema guardar o seu progresso neste computador ou celular.</p>
+    <form id="form-entrar">
+      <label for="nome">Seu nome</label>
+      <input id="nome" type="text" placeholder="Ex.: Ana Beatriz" autocomplete="off">
+      <label for="turma">Turma</label>
+      <input id="turma" type="text" placeholder="Ex.: 9º A" autocomplete="off">
+      <button class="btn primario" id="btn-entrar" type="submit" style="width:100%">Entrar na trilha</button>
+    </form>
+    <p class="nota"><b>Como o seu progresso é guardado:</b> tudo fica salvo apenas neste navegador
+      (<i>localStorage</i>). Nada é enviado para a internet e ninguém mais vê as suas respostas.
+      Se você limpar os dados do navegador ou usar outro aparelho, o progresso não vai junto —
+      por isso existe o botão <b>“Baixar meu progresso”</b> na aba <b>Meu progresso</b>.</p>
+  </section>
+
+  <!-- aplicação -->
+  <div id="app" hidden>
+    <div id="tela"></div>
+  </div>
+</main>
+
+<footer class="rodape">
+  <p><b>Caderno DED Express · Educação Física, 9º ano.</b> Trilha baseada no Plano de Curso 2026
+    (3º trimestre) da Secretaria de Estado de Educação de Minas Gerais e no Currículo Referência de
+    Minas Gerais. Habilidade central <b>EF89EF08P9</b>, com apoio de EF89EF07P9, EF89EF09P9 e EF89EF11P9.</p>
+  <p>As recomendações de atividade física citadas seguem as diretrizes da Organização Mundial da Saúde
+    para a faixa de 5 a 17 anos. Este material é educativo e não substitui orientação de profissional
+    de saúde ou de Educação Física.</p>
+</footer>
+
+<div id="aviso" class="aviso-flutuante" role="status" hidden></div>
+
+<script src="js/conteudo.js"></script>
+<script src="js/armazenamento.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

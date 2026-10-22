@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root{
+  --roxo-900:#3D1766; --roxo-700:#5B2A86; --roxo-500:#7B3FBF;
+  --lilas-100:#F1EAFB; --lilas-200:#E3D5F6;
+  --disc:#F2711C; --disc-escuro:#C4520A; --disc-claro:#FEEEE3;
+  --verde:#7AC943; --amarelo:#FFC928; --azul:#4FC3F7; --vermelho:#D6336C;
+  --tinta:#1F1A2E; --cinza:#6B6680; --linha:#D9D2E6; --papel:#fff; --fundo:#F7F4FC;
+  --raio:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--fundo);color:var(--tinta);font-family:Nunito,system-ui,sans-serif}
+img{max-width:100%}
+button{font-family:inherit}
+
+/* ----------------------------------------------------------- estrutura */
+.topo{background:var(--roxo-900);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+.topo .faixa{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
+.topo img{width:40px;height:40px}
+.topo h1{font:800 18px/1.1 'Baloo 2';margin:0;flex:1}
+.topo h1 small{display:block;font:700 11px Nunito;opacity:.8;letter-spacing:.3px}
+.topo nav{display:flex;gap:6px}
+.topo nav button{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:10px;padding:8px 12px;
+  font:800 13px Nunito;cursor:pointer}
+.topo nav button:hover{background:rgba(255,255,255,.24)}
+.topo nav button.ativo{background:var(--disc)}
+.quem{font:700 12px Nunito;opacity:.85;white-space:nowrap}
+main{max-width:980px;margin:0 auto;padding:22px 16px 60px}
+.rodape{max-width:980px;margin:0 auto;padding:20px 16px 40px;color:var(--cinza);font:600 12px/1.6 Nunito}
+.rodape a{color:var(--roxo-500)}
+
+/* --------------------------------------------------------------- porta */
+.porta{max-width:520px;margin:46px auto;background:var(--papel);border-radius:20px;padding:28px;
+  box-shadow:0 10px 36px rgba(61,23,102,.14);text-align:center}
+.porta img{width:92px}
+.porta h2{font:800 25px/1.15 'Baloo 2';color:var(--roxo-900);margin:10px 0 4px}
+.porta p{font:600 14px/1.55 Nunito;color:var(--cinza);margin:0 0 18px}
+.porta label{display:block;text-align:left;font:800 12px Nunito;color:var(--roxo-700);margin:0 0 4px}
+.porta input{width:100%;padding:11px 13px;border:2px solid var(--linha);border-radius:11px;
+  font:600 15px Nunito;margin-bottom:12px}
+.porta input:focus{outline:0;border-color:var(--roxo-500)}
+.nota{font:600 12px/1.5 Nunito;color:var(--cinza);margin-top:14px;background:var(--lilas-100);
+  padding:10px 12px;border-radius:10px;text-align:left}
+
+/* --------------------------------------------------------------- botões */
+.btn{background:var(--lilas-100);color:var(--roxo-700);border:0;border-radius:11px;padding:11px 18px;
+  font:800 14px Nunito;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--lilas-200)}
+.btn.primario{background:var(--disc);color:#fff}
+.btn.primario:hover{background:var(--disc-escuro)}
+.btn.fraco{background:transparent;color:var(--cinza);text-decoration:underline}
+.btn.perigo{background:#FDE8EF;color:#A1114A}
+.btn.arquivo{display:inline-block}
+.voltar{background:none;border:0;color:var(--roxo-500);font:800 14px Nunito;cursor:pointer;padding:4px 0 12px}
+
+/* --------------------------------------------------------- capa trilha */
+.capa-trilha{background:linear-gradient(135deg,var(--roxo-700),var(--roxo-500));color:#fff;border-radius:20px;
+  padding:26px;display:flex;gap:20px;align-items:center}
+.capa-trilha .etiqueta{font:800 11px Nunito;letter-spacing:1px;text-transform:uppercase;opacity:.85;margin:0}
+.capa-trilha h2{font:800 28px/1.12 'Baloo 2';margin:6px 0 10px}
+.capa-trilha .sub{font:600 14.5px/1.6 Nunito;margin:0 0 12px;opacity:.95}
+.capa-trilha .hab{font:600 12px/1.5 Nunito;background:rgba(0,0,0,.18);padding:10px 12px;border-radius:10px;margin:0}
+.capa-img{width:120px;flex:none;align-self:flex-end}
+@media(max-width:620px){.capa-img{display:none}.capa-trilha h2{font-size:23px}}
+
+.barra-geral{margin:22px 0 6px}
+.rotulos{display:flex;justify-content:space-between;font:800 12.5px Nunito;color:var(--roxo-700);margin-bottom:5px}
+.barra{background:var(--lilas-200);border-radius:99px;height:14px;overflow:hidden}
+.barra i{display:block;height:100%;background:var(--disc);border-radius:99px;transition:width .4s}
+.barra.fina{height:9px;margin:10px 0 6px;background:rgba(255,255,255,.35)}
+.barra.fina i{background:#fff}
+
+.titulo-secao{font:800 19px 'Baloo 2';color:var(--roxo-900);margin:26px 0 12px}
+.titulo-pagina{font:800 27px 'Baloo 2';color:var(--roxo-900);margin:4px 0 16px}
+
+/* -------------------------------------------------------------- trilha */
+.trilha{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.cartao-mod{width:100%;text-align:left;background:var(--papel);border:2px solid var(--linha);border-radius:var(--raio);
+  padding:16px;cursor:pointer;position:relative;transition:.15s}
+.cartao-mod:hover:not(:disabled){border-color:var(--roxo-500);transform:translateY(-2px);box-shadow:0 8px 20px rgba(61,23,102,.1)}
+.cartao-mod:disabled{opacity:.55;cursor:not-allowed}
+.cartao-mod .nivel{position:absolute;top:-10px;left:14px;color:#fff;font:800 10.5px Nunito;
+  padding:3px 9px;border-radius:99px;letter-spacing:.4px;text-transform:uppercase}
+.cartao-mod .num{position:absolute;top:12px;right:14px;font:800 26px 'Baloo 2';color:var(--lilas-200)}
+.cartao-mod h4{font:800 17px/1.2 'Baloo 2';color:var(--roxo-900);margin:12px 30px 6px 0}
+.cartao-mod p{font:600 13px/1.45 Nunito;color:var(--cinza);margin:0 0 10px}
+.rodape-mod{font:800 12px Nunito;color:var(--disc)}
+.passo.pronto .cartao-mod{border-color:var(--verde)}
+.passo.pronto .rodape-mod{color:#4E8F1E}
+
+/* ------------------------------------------------------------- módulo */
+.cab-mod{background:var(--papel);border-radius:var(--raio);padding:18px 20px;border-left:7px solid var(--cor)}
+.cab-mod .nivel{display:inline-block;background:var(--cor);color:#fff;font:800 10.5px Nunito;padding:3px 9px;
+  border-radius:99px;text-transform:uppercase;letter-spacing:.4px}
+.cab-mod h2{font:800 25px/1.15 'Baloo 2';color:var(--roxo-900);margin:8px 0 6px}
+.hab-mod{font:600 12px/1.5 Nunito;color:var(--cinza);margin:0 0 4px;background:var(--fundo);padding:8px 10px;border-radius:9px}
+.cab-mod .barra{background:var(--lilas-200)}
+.estado-mod{font:700 12.5px Nunito;color:var(--roxo-700);margin:4px 0 0}
+.ok-mini{color:#4E8F1E;font-weight:800}
+
+.abas{display:flex;gap:6px;margin:16px 0 14px;flex-wrap:wrap}
+.abas button{background:var(--papel);border:2px solid var(--linha);border-radius:11px;padding:9px 15px;
+  font:800 13.5px Nunito;color:var(--cinza);cursor:pointer}
+.abas button.ativa{background:var(--roxo-700);border-color:var(--roxo-700);color:#fff}
+
+.miolo{background:var(--papel);border-radius:var(--raio);padding:20px}
+.texto p{font:600 15px/1.65 Nunito;margin:0 0 12px}
+.texto ul,.texto ol{font:600 15px/1.65 Nunito;padding-left:22px;margin:0 0 12px}
+.texto li{margin-bottom:6px}
+.texto b{color:var(--roxo-900)}
+.figura{margin:14px 0;background:var(--fundo);border-radius:12px;padding:12px;text-align:center}
+.fig{width:100%;height:auto;max-height:300px}
+.destaque{display:flex;gap:12px;align-items:flex-start;background:#FFF8E1;border:2px solid var(--amarelo);
+  border-radius:12px;padding:14px;margin:14px 0}
+.destaque p{font:600 14px/1.55 Nunito;margin:0}
+.dica-ico{flex:none;width:26px;height:26px;border-radius:50%;background:var(--amarelo);color:#5B4200;
+  font:900 16px/26px Nunito;text-align:center}
+.cartoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:14px 0}
+.cartao{background:var(--lilas-100);border-radius:12px;padding:13px 15px}
+.cartao h4{font:800 15px 'Baloo 2';color:var(--roxo-700);margin:0 0 5px}
+.cartao p{font:600 13px/1.5 Nunito;margin:0}
+
+/* ----------------------------------------------------------- questões */
+.questao{border:2px solid var(--linha);border-radius:var(--raio);padding:16px;margin-bottom:16px;background:var(--papel)}
+.questao.acertou{border-color:var(--verde);background:#F6FCF1}
+.questao.parcial{border-color:var(--amarelo);background:#FFFDF2}
+.questao.errou{border-color:var(--vermelho);background:#FDF4F7}
+.questao header{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+.qn{flex:none;width:26px;height:26px;border-radius:50%;background:var(--roxo-700);color:#fff;
+  font:800 14px/26px 'Baloo 2';text-align:center}
+.questao .enun{flex:1;font:700 14.5px/1.5 Nunito}
+.questao .enun b{color:var(--roxo-900)}
+.selo{flex:none;font:800 11px Nunito;background:var(--lilas-100);color:var(--roxo-700);padding:4px 9px;border-radius:99px}
+.selo.acertou{background:#DFF3CE;color:#3E7A14}
+.selo.parcial{background:#FFF0C2;color:#7A5A00}
+.selo.errou{background:#FBD9E4;color:#A1114A}
+
+.opcoes{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opcao{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--linha);border-radius:11px;
+  padding:10px 13px;cursor:pointer;background:var(--papel);font:600 14px/1.45 Nunito}
+.opcao:hover{border-color:var(--roxo-500)}
+.opcao.marcada{border-color:var(--roxo-500);background:var(--lilas-100)}
+.opcao.certa{border-color:var(--verde);background:#F0FAE6}
+.opcao.errada{border-color:var(--vermelho);background:#FDEFF4}
+.opcao input{margin-top:3px;accent-color:var(--roxo-500)}
+
+.tab-vf{width:100%;border-collapse:collapse}
+.tab-vf th{background:var(--lilas-100);font:800 12px Nunito;color:var(--roxo-700);padding:8px;text-align:left}
+.tab-vf th:not(:first-child),.tab-vf td.c{width:46px;text-align:center}
+.tab-vf td{border-top:1px solid var(--linha);padding:9px 8px;font:600 13.5px/1.45 Nunito;vertical-align:top}
+.tab-vf tr.ok td{background:#F6FCF1}
+.tab-vf tr.nok td{background:#FDF4F7}
+.porque{font:600 12px/1.45 Nunito;color:var(--cinza);margin-top:4px}
+.tab-vf input{accent-color:var(--roxo-500)}
+
+.associar{display:grid;gap:9px}
+.par{display:grid;grid-template-columns:minmax(120px,1fr) minmax(140px,1.3fr);gap:10px;align-items:center;
+  border:2px solid var(--linha);border-radius:11px;padding:9px 12px}
+.par.ok{border-color:var(--verde);background:#F6FCF1}
+.par.nok{border-color:var(--vermelho);background:#FDF4F7}
+.par .esq{font:800 13.5px Nunito;color:var(--roxo-900)}
+.par select{padding:8px 10px;border:2px solid var(--linha);border-radius:9px;font:600 13px Nunito;background:#fff}
+
+.ordenar{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:n}
+.ordenar li{display:flex;gap:10px;align-items:center;border:2px solid var(--linha);border-radius:11px;
+  padding:9px 12px;font:600 14px/1.4 Nunito}
+.ordenar li.ok{border-color:var(--verde);background:#F6FCF1}
+.ordenar li.nok{border-color:var(--vermelho);background:#FDF4F7}
+.ordenar input{width:54px;padding:7px;border:2px solid var(--linha);border-radius:9px;font:800 15px Nunito;text-align:center}
+
+.numero{display:flex;gap:9px;align-items:center}
+.numero input{width:130px;padding:10px 12px;border:2px solid var(--linha);border-radius:11px;font:800 16px Nunito}
+.numero .un{font:700 13px Nunito;color:var(--cinza)}
+
+.miolo textarea{width:100%;padding:12px;border:2px solid var(--linha);border-radius:12px;
+  font:600 14.5px/1.55 Nunito;resize:vertical}
+.miolo textarea:focus{outline:0;border-color:var(--roxo-500)}
+.dica{font:600 12.5px Nunito;color:var(--cinza);margin:0 0 8px}
+.contador{font:700 12px Nunito;color:var(--vermelho);margin:5px 0 10px}
+.contador.ok{color:#4E8F1E}
+.rubrica{background:var(--lilas-100);border-radius:12px;padding:12px 14px}
+.rubrica h5{font:800 13px Nunito;color:var(--roxo-700);margin:0 0 8px}
+.criterio{display:flex;gap:9px;align-items:flex-start;font:600 13.5px/1.45 Nunito;margin-bottom:7px;cursor:pointer}
+.criterio input{margin-top:3px;accent-color:var(--roxo-500)}
+
+.explicacao{margin-top:12px;background:var(--lilas-100);border-radius:11px;padding:11px 13px;
+  font:600 13.5px/1.5 Nunito;color:var(--roxo-900)}
+.responder{margin-top:13px}
+
+/* ------------------------------------------------------------ caderno */
+.tarefa{border:2px dashed var(--roxo-500);border-radius:var(--raio);padding:15px;margin-bottom:14px;background:#FCFAFF}
+.tarefa.feita{border-style:solid;border-color:var(--verde);background:#F6FCF1}
+.tarefa .enun{font:600 14.5px/1.6 Nunito;margin:8px 0 12px}
+.check{display:inline-flex;gap:8px;align-items:center;font:800 13px Nunito;color:var(--roxo-700);cursor:pointer}
+.check input{width:19px;height:19px;accent-color:var(--verde)}
+.campo{display:block;font:800 12px Nunito;color:var(--roxo-700)}
+.campo input{width:100%;margin-top:5px;padding:10px 12px;border:2px solid var(--linha);border-radius:11px;font:600 14px Nunito}
+
+.pe-mod{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+
+/* ---------------------------------------------------------- progresso */
+.cartoes-num{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.num-card{background:var(--papel);border-radius:var(--raio);padding:15px;text-align:center;border:2px solid var(--linha)}
+.num-card b{display:block;font:800 26px 'Baloo 2';color:var(--disc)}
+.num-card span{font:700 11.5px/1.3 Nunito;color:var(--cinza)}
+.grafico{width:100%;height:auto;background:var(--papel);border-radius:var(--raio);padding:14px}
+.medalhas{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:11px}
+.medalha{display:flex;gap:11px;align-items:center;background:var(--papel);border:2px solid var(--linha);
+  border-radius:12px;padding:12px;opacity:.55}
+.medalha.tem{opacity:1;border-color:var(--amarelo);background:#FFFDF3}
+.medalha .ico{font-size:26px;color:var(--amarelo)}
+.medalha b{font:800 14px Nunito;color:var(--roxo-900)}
+.medalha p{font:600 12px/1.4 Nunito;color:var(--cinza);margin:2px 0 0}
+.tab-relatorio{width:100%;border-collapse:collapse;background:var(--papel);border-radius:var(--raio);overflow:hidden}
+.tab-relatorio th{background:var(--roxo-700);color:#fff;font:800 12px Nunito;padding:9px;text-align:left}
+.tab-relatorio td{border-top:1px solid var(--linha);padding:9px;font:600 13px/1.4 Nunito}
+.tab-relatorio td.c{text-align:center;font-weight:800;color:var(--verde)}
+.acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+
+/* ------------------------------------------------------------- avisos */
+.aviso-flutuante{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:50;
+  background:var(--roxo-900);color:#fff;padding:13px 20px;border-radius:12px;font:800 14px Nunito;
+  box-shadow:0 8px 24px rgba(0,0,0,.26);max-width:92vw;text-align:center}
+.aviso-flutuante.erro{background:var(--vermelho)}
+.alerta{background:#FDE8EF;border:2px solid var(--vermelho);color:#8A0F3F;border-radius:12px;
+  padding:12px 14px;font:700 13.5px/1.5 Nunito;margin-bottom:16px}
+
+/* ----------------------------------------------------------- impressão */
+@media print{
+  .topo,.acoes,.abas,.pe-mod,.voltar,.aviso-flutuante{display:none !important}
+  body{background:#fff}
+  main{max-width:none;padding:0}
+  .num-card,.medalha,.grafico,.tab-relatorio{break-inside:avoid}
+}
+
+/* ------------------------------------------------------------- celular */
+@media(max-width:560px){
+  .topo .faixa{padding:8px 12px;gap:8px}
+  .topo img{width:32px;height:32px}
+  .topo h1{font-size:15px}
+  .topo h1 small,.quem{display:none}
+  .topo nav button{padding:7px 10px;font-size:12px}
+  main{padding:16px 12px 48px}
+  .capa-trilha{padding:18px}
+  .capa-trilha h2{font-size:21px}
+  .miolo,.cab-mod{padding:14px}
+  .cab-mod h2{font-size:21px}
+  .par{grid-template-columns:1fr;gap:6px}
+  .trilha{grid-template-columns:1fr}
+  .btn{width:100%}
+  .pe-mod,.acoes{flex-direction:column}
+}
